@@ -14,10 +14,12 @@ if (!file_exists($autoload)) {
 
 require_once $autoload;
 
+use Composer\InstalledVersions;
 use FontOptimizer\Command\OptimizeCommand;
 use Symfony\Component\Console\Application;
 
-$app = new Application('Font Optimizer', '1.0.0');
+$version = InstalledVersions::getVersion('uxcode-fr/font-optimizer') ?? 'dev';
+$app = new Application('Font Optimizer', $version);
 $app->add(new OptimizeCommand());
 $app->setDefaultCommand('optimize');
 $app->run();
