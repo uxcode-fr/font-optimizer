@@ -2,6 +2,8 @@
   "name": "uxcode-fr/font-optimizer",
   "description": "Automate your web typography workflow with this Composer dev-tool.",
   "type": "library",
+  "license": "MIT",
+  "keywords": ["font", "typography", "optimization", "dev"],
   "require": {
     "php": ">=8.1",
     "composer-runtime-api": "^2.0",
