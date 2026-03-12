@@ -82,10 +82,11 @@ class OptimizeCommand extends Command
         if ($process->isSuccessful()) {
             $finalSize = round(filesize($outputFile) / 1024, 2);
             $saving    = round((1 - $finalSize / $originalSize) * 100);
-            $output->writeln("  <fg=green>✓</> $filename.{$config->flavor} (<fg=green>$finalSize KB</>, <fg=green>-$saving%</> 🚀)");
+            $output->writeln("  <fg=green>✓</> $filename.{$config->flavor} (<fg=green>$finalSize KB</>, <fg=green><options=bold>-$saving%</></> 🚀 )");
         } else {
             $output->writeln('  <error>✗</> Error on ' . basename($font));
             $output->writeln($process->getErrorOutput());
         }
+        $output->writeln('');
     }
 }
