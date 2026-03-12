@@ -66,7 +66,7 @@ class OptimizeCommand extends Command
         $outputFile  = "$destDir/$filename.{$config->flavor}";
         $originalSize = round(filesize($font) / 1024, 2);
 
-        $output->writeln('🪶 Optimizing <info>' . basename($font) . '</info> (' . $originalSize . ' KB)...');
+        $output->writeln('🪶  Optimizing <fg=blue>' . basename($font) . '</> (<fg=red>' . $originalSize . ' KB</>)...');
 
         $process = new Process(array_filter([
             'python3', '-m', 'fontTools.subset', $font,
