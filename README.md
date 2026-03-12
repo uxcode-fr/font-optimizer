@@ -27,6 +27,19 @@ brew install python3 && pip3 install fonttools brotli
 composer require --dev uxcode-fr/font-optimizer
 ```
 
+After installation, Composer automatically checks that Python 3 and fontTools are available:
+
+```
+✓  font-optimizer: Python3 + fontTools detected.
+```
+
+If the check fails, you will see:
+
+```
+⚠  font-optimizer requires Python3 + fontTools to work.
+   Run: sudo apt install -y python3 python3-fonttools python3-brotli
+```
+
 The binary is available at `vendor/bin/font-optimizer`.
 
 ---
