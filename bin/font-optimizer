@@ -1,7 +1,18 @@
 #!/usr/bin/env php
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+// Installed as a dependency: vendor/uxcode-fr/font-optimizer/bin/ → vendor/autoload.php
+// Standalone (development):  bin/ → vendor/autoload.php
+$autoload = file_exists(__DIR__ . '/../../autoload.php')
+    ? __DIR__ . '/../../autoload.php'
+    : __DIR__ . '/../vendor/autoload.php';
+
+if (!file_exists($autoload)) {
+    fwrite(STDERR, "Composer autoloader not found. Run 'composer install'.\n");
+    exit(1);
+}
+
+require_once $autoload;
 
 use FontOptimizer\Command\OptimizeCommand;
 use Symfony\Component\Console\Application;
