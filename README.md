@@ -5,7 +5,7 @@
 Converts TTF fonts to optimized WOFF2 subsets using Python FontTools.
 Works with **Laravel**, **Symfony**, and **vanilla PHP** projects.
 
-![Screenshot](screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/uxcode-fr/font-optimizer/main/screenshot.png)
 ---
 
 ## Prerequisites

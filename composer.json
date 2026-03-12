@@ -3,13 +3,26 @@
   "description": "Automate your web typography workflow with this Composer dev-tool.",
   "type": "library",
   "license": "MIT",
+  "homepage": "https://github.com/uxcode-fr/font-optimizer",
   "keywords": ["font", "typography", "optimization", "dev"],
+  "authors": [
+    {
+      "name": "Arnaud Lemercier",
+      "email": "arnaud@wixiweb.fr",
+      "homepage": "https://github.com/uxcode-fr",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/uxcode-fr/font-optimizer/issues",
+    "source": "https://github.com/uxcode-fr/font-optimizer"
+  },
   "require": {
     "php": ">=8.1",
     "composer-runtime-api": "^2.0",
     "symfony/console": "^6.0|^7.0",
     "symfony/process": "^6.0|^7.0"
-  },
+  }
   "bin": [
     "bin/font-optimizer"
   ],
@@ -17,7 +30,7 @@
     "psr-4": {
       "FontOptimizer\\": "src/"
     }
-  },
+  }
   "extra": {
     "laravel": {
       "providers": [
@@ -25,6 +38,11 @@
       ]
     }
   },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
   "scripts": {
     "post-install-cmd": ["FontOptimizer\\DependencyChecker::check"],
     "post-update-cmd":  ["FontOptimizer\\DependencyChecker::check"]
