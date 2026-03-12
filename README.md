@@ -92,15 +92,15 @@ return [
 
 ### Configuration options
 
-| Key           | Description                                      | Allowed values                                                         | Default                      |
-|---------------|--------------------------------------------------|------------------------------------------------------------------------|------------------------------|
-| `source`      | Directory containing your source `.ttf` files    | Any path relative to the project root                                  | `resources/fonts`            |
-| `destination` | Directory where output files will be saved       | Any path relative to the project root                                  | `public/fonts`               |
-| `unicodes`    | Unicode ranges to include in the subset          | Hex codepoints or ranges (`U+0020-007F`), comma-separated, or `*`      | Basic Latin + Latin-1 + `Œœ` |
-| `features`    | OpenType layout features to preserve             | See [OpenType feature tags](#opentype-feature-tags), comma-separated, or `*` | `kern,liga`             |
-| `flavor`      | Output font format                               | `woff2`, `woff`                                                        | `woff2`                      |
-| `name_ids`    | Name table record IDs to keep                    | Comma-separated IDs (0–19), or `*`                                     | `*`                          |
-| `hinting`     | Keep hinting instructions                        | `true`, `false`                                                        | `true`                       |
+| Key           | Description                                                                          | Allowed values                                                         | Default                      |
+|---------------|--------------------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------|
+| `source`      | Directory containing your source `.ttf` files                                        | Any path relative to the project root                                  | `resources/fonts`            |
+| `destination` | Directory where output files will be saved                                           | Any path relative to the project root                                  | `public/fonts`               |
+| `unicodes`    | Unicode ranges to include in the subset — use `*` to keep all glyphs (no subsetting) | Hex codepoints or ranges (`U+0020-007F`), comma-separated, or `*` | Basic Latin + Latin-1 + `Œœ` |
+| `features`    | OpenType layout features to preserve                                                 | See [OpenType feature tags](#opentype-feature-tags), comma-separated, or `*` | `kern,liga`             |
+| `flavor`      | Output font format                                                                   | `woff2`, `woff`                                                        | `woff2`                      |
+| `name_ids`    | Name table record IDs to keep                                                        | Comma-separated IDs (0–19), or `*`                                     | `*`                          |
+| `hinting`     | Keep hinting instructions                                                            | `true`, `false`                                                        | `true`                       |
 
 ### OpenType feature tags
 
@@ -153,6 +153,20 @@ Output example:
   ✓ inter-bold.woff2 (30 KB, -91%)
 ```
 
+### Convert without subsetting
+
+To convert TTF fonts to WOFF/WOFF2 without any subsetting (keep all glyphs), set `unicodes` to `*` and `features` to `*`:
+
+```php
+return [
+    'source'      => 'resources/fonts',
+    'destination' => 'public/fonts',
+    'unicodes'    => '*',   // keep all glyphs — no subsetting
+    'features'    => '*',   // keep all OpenType features
+    'flavor'      => 'woff2',
+];
+```
+
 ### Composer shortcut (optional)
 
 Add to your `composer.json`:
@@ -180,6 +194,11 @@ composer fonts
 - **Consistency** — every developer on your team uses the same optimization settings.
 
 ---
+
+## Authors
+ - [uxcode](https://uxcode.fr/en)
+ - [wixiweb](https://wixiweb.fr)
+ - [arnolem](https://arnaud.lemercier.me)
 
 ## Contributing
 
