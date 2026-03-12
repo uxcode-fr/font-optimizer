@@ -1,0 +1,29 @@
+{
+  "name": "uxcode-fr/font-optimizer",
+  "description": "Automate your web typography workflow with this Composer dev-tool.",
+  "type": "library",
+  "require": {
+    "php": ">=8.1",
+    "symfony/console": "^6.0|^7.0",
+    "symfony/process": "^6.0|^7.0"
+  },
+  "bin": [
+    "bin/font-optimizer"
+  ],
+  "autoload": {
+    "psr-4": {
+      "FontOptimizer\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "FontOptimizer\\FontOptimizerServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": ["FontOptimizer\\DependencyChecker::check"],
+    "post-update-cmd":  ["FontOptimizer\\DependencyChecker::check"]
+  }
+}

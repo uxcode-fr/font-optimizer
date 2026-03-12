@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use FontOptimizer\Command\OptimizeCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('Font Optimizer', '1.0.0');
+$app->add(new OptimizeCommand());
+$app->setDefaultCommand('optimize');
+$app->run();
