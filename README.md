@@ -65,7 +65,7 @@ php artisan vendor:publish --tag=font-optimizer-config
 return [
     'source'      => 'resources/fonts',              // directory containing .ttf source files
     'destination' => 'public/fonts',                 // directory where output files will be saved
-    'unicodes'    => 'U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019', // Unicode ranges to subset
+    'unicodes'    => 'U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019,U+201C,U+201D', // Unicode ranges to subset
     'features'    => 'kern,liga',                    // OpenType features to preserve
     'flavor'      => 'woff2',                        // output format: woff2 or woff
     'name_ids'    => '*',                            // name table IDs to keep (* = all)
@@ -81,7 +81,7 @@ return [
         "font-optimizer": {
             "source":      "resources/fonts",
             "destination": "public/fonts",
-            "unicodes":    "U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019",
+            "unicodes":    "U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019,U+201C,U+201D",
             "features":    "kern,liga",
             "flavor":      "woff2",
             "name_ids":    "*",

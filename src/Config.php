@@ -16,7 +16,7 @@ final class Config
     {
         $this->source      = $data['source']      ?? 'resources/fonts';
         $this->destination = $data['destination'] ?? 'public/fonts';
-        $this->unicodes    = $data['unicodes']     ?? 'U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019';
+        $this->unicodes    = $data['unicodes']     ?? 'U+0020-007F,U+00A0-00FF,U+0152-0153,U+20AC,U+2019,U+201C,U+201D';
         $this->features    = $data['features']     ?? 'kern,liga';
         $flavor = $data['flavor'] ?? 'woff2';
         if (!in_array($flavor, ['woff', 'woff2'], true)) {
