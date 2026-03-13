@@ -17,6 +17,8 @@ use Symfony\Component\Console\Application;
 
 $version = InstalledVersions::getVersion('uxcode-fr/font-optimizer') ?? 'dev';
 $app = new Application('Font Optimizer', $version);
-$app->add(new OptimizeCommand());
+method_exists($app, 'addCommand')
+    ? $app->addCommand(new OptimizeCommand())
+    : $app->add(new OptimizeCommand());
 $app->setDefaultCommand('optimize');
 $app->run();
