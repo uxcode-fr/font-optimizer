@@ -196,6 +196,13 @@ composer fonts
 
 ---
 
+## Articles
+
+- [PHP Composer Font Optimizer](https://uxcode.fr/en/articles/php-composer-font-optimizer) (EN)
+- [PHP Composer Font Optimizer](https://uxcode.fr/articles/php-composer-font-optimizer) (FR)
+
+---
+
 ## Authors
  - [uxcode](https://uxcode.fr/en)
  - [wixiweb](https://wixiweb.fr)
